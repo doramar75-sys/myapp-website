@@ -1,0 +1,25 @@
+
+:root {
+  font-family: "Segoe UI", "Noto Sans JP", sans-serif;
+  color: #f5f7ff;
+  background: #0b1025;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button, a {
+  font: inherit;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
