@@ -35,7 +35,7 @@ function App() {
 
           <div className="hero-image">
             <img
-              src="/myapp-screen.png"
+              src={`${import.meta.env.BASE_URL}myapp-screen.png`}
               alt="MYAPPの実際のアプリ画面"
             />
           </div>
