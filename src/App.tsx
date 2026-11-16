@@ -1,81 +1,69 @@
-
+import { useState } from 'react'
 import './App.css'
 
+const features = [
+  { icon: '▦', title: 'カテゴリー整理', description: 'アプリを用途ごとに分類して、見やすく整理できます。' },
+  { icon: '▣', title: 'フォルダ管理', description: '関連するアプリをまとめて、すっきり収納できます。' },
+  { icon: '⌕', title: 'アプリ検索', description: 'たくさんのアプリから、使いたいものをすばやく検索。' },
+  { icon: '⌂', title: 'ホームとして使える', description: '通常のアプリとしても、ホームアプリとしても利用可能。' },
+]
+
 function App() {
+  const [featuresOpen, setFeaturesOpen] = useState(false)
+
   return (
     <div className="site">
-      <header className="header">
-        <div className="logo">MYAPP</div>
-       <nav>
-  <a href="#features">機能紹介</a>
-  <a href={`${import.meta.env.BASE_URL}guide.html`}>
-    使い方ガイド
-  </a>
-  <a href="#download">ダウンロード</a>
-</nav>
+      <header className="header page-width">
+        <a className="logo" href="#top" aria-label="MYAPP トップへ">MYAPP</a>
+        <nav aria-label="メインメニュー">
+          <a href="#features" onClick={() => setFeaturesOpen(true)}>機能紹介</a>
+          <a href={`${import.meta.env.BASE_URL}guide.html`}>使い方ガイド</a>
+          <a href="#download">ダウンロード</a>
+        </nav>
       </header>
 
-      <main>
-        <section className="hero">
+      <main id="top">
+        <section className="hero page-width">
           <div className="hero-text">
-            <span className="eyebrow">Android アプリ整理ツール</span>
-            <h1>
-              アプリを探す時間を、
-              <br />
-              <span>もっと短く。</span>
-            </h1>
-            <p>
-              支払い、仕事、ゲーム、写真。
-              <br />
-              増え続けるアプリを、自分好みに整理。
-              <br />
-              必要なアプリに、すばやくアクセス。
-            </p>
-            <a className="primary-button" href="#download">
-              MYAPPを使ってみる
-            </a>
+            <h1>アプリを探す時間を、<br /><span>もっと短く。</span></h1>
+            <p>増え続けるアプリを、カテゴリーやフォルダで自由に整理。<br className="desktop-break" />必要なアプリを、すばやく見つけられます。</p>
+            <a className="primary-button" href="#download">MYAPPを使ってみる</a>
           </div>
-
           <div className="hero-image">
-            <img
-              src={`${import.meta.env.BASE_URL}myapp-screen.png`}
-              alt="MYAPPの実際のアプリ画面"
-            />
+            <img src={`${import.meta.env.BASE_URL}myapp-screen.png`} alt="MYAPPの実際のアプリ画面" />
           </div>
         </section>
 
-        <section className="features" id="features">
-          <h2>アプリの整理を、もっと自由に。</h2>
-          <div className="feature-grid">
-            <article>
-              <div className="feature-icon">▦</div>
-              <h3>カテゴリー整理</h3>
-              <p>支払いや仕事など、用途に合わせて自由に分類。</p>
-            </article>
-            <article>
-              <div className="feature-icon">▣</div>
-              <h3>フォルダ管理</h3>
-              <p>関連するアプリをまとめて、すっきり収納。</p>
-            </article>
-            <article>
-              <div className="feature-icon">⌕</div>
-              <h3>アプリ検索</h3>
-              <p>たくさんのアプリの中から、使いたいものを検索。</p>
-            </article>
-            <article>
-              <div className="feature-icon">⌂</div>
-              <h3>ホームとしても使える</h3>
-              <p>通常のアプリとしても、ホームアプリとしても利用可能。</p>
-            </article>
+        <section className="features-section" id="features">
+          <div className="page-width">
+            <button
+              className="section-toggle"
+              type="button"
+              aria-expanded={featuresOpen}
+              aria-controls="features-content"
+              onClick={() => setFeaturesOpen(!featuresOpen)}
+            >
+              <span>主な機能 <small>{featuresOpen ? '閉じる' : 'タップして見る'}</small></span>
+              <span className="toggle-symbol" aria-hidden="true">{featuresOpen ? '−' : '＋'}</span>
+            </button>
+            {featuresOpen && (
+              <div className="feature-grid" id="features-content">
+                {features.map((feature) => (
+                  <article key={feature.title}>
+                    <div className="feature-icon" aria-hidden="true">{feature.icon}</div>
+                    <h3>{feature.title}</h3>
+                    <p>{feature.description}</p>
+                  </article>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
-        <section className="download" id="download">
+        <section className="download page-width" id="download">
           <h2>あなたのスマホを、もっと使いやすく。</h2>
           <p>MYAPPはAndroid向けのアプリ整理ツールです。</p>
-          <span className="coming-soon">
-            ダウンロード案内は準備中
-          </span>
+          <span className="coming-soon">ダウンロード案内は準備中</span>
         </section>
       </main>
 
