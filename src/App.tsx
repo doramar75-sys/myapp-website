@@ -6,10 +6,13 @@ function App() {
     <div className="site">
       <header className="header">
         <div className="logo">MYAPP</div>
-        <nav>
-          <a href="#features">機能紹介</a>
-          <a href="#download">ダウンロード</a>
-        </nav>
+       <nav>
+  <a href="#features">機能紹介</a>
+  <a href={`${import.meta.env.BASE_URL}guide.html`}>
+    使い方ガイド
+  </a>
+  <a href="#download">ダウンロード</a>
+</nav>
       </header>
 
       <main>
