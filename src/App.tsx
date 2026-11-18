@@ -1,9 +1,3 @@
-cd "$env:USERPROFILE\Downloads\myapp-website-main\myapp-website-main"
-
-$path = "src\App.tsx"
-Copy-Item $path "$path.before-update.bak" -Force
-
-@'
 import { useState } from 'react'
 import './App.css'
 
