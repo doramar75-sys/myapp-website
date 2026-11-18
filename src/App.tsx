@@ -63,7 +63,7 @@ function App() {
         <section className="download page-width" id="download">
           <h2>あなたのスマホを、もっと使いやすく。</h2>
           <p>MYAPPはAndroid向けのアプリ整理ツールです。</p>
-          <span className="coming-soon">ダウンロード案内は準備中</span>
+          <a className="primary-button" href="https://github.com/doramar75-sys/myapp-website/releases/latest/download/app-release.apk">MYAPPをダウンロード（Android）</a>
         </section>
       </main>
 
