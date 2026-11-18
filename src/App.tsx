@@ -150,4 +150,4 @@ function App() {
 export default App
 '@ | Set-Content $path -Encoding UTF8
 
-npm run build
+
