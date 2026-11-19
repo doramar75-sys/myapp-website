@@ -122,3 +122,60 @@ footer { padding: 20px; border-top: 1px solid #ffffff16; color: #8792b4; font-si
   .section-toggle small { font-size: 11px; }
   .download h2 { font-size: 22px; }
 }
+
+/* MYAPP additional sections */
+.extra-section {
+  padding-block: 20px 36px;
+  display: grid;
+  gap: 12px;
+}
+
+.extra-panel {
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 16px;
+  background: rgba(255,255,255,.045);
+  overflow: hidden;
+}
+
+.extra-panel summary {
+  cursor: pointer;
+  padding: 18px 22px;
+  font-size: 19px;
+  font-weight: 700;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.extra-panel summary::-webkit-details-marker {
+  display: none;
+}
+
+.extra-panel[open] summary span {
+  transform: rotate(45deg);
+}
+
+.extra-content {
+  padding: 0 22px 22px;
+  line-height: 1.8;
+}
+
+.extra-content h3 {
+  margin-top: 18px;
+}
+
+.extra-content a {
+  color: #8abaff;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .extra-panel summary {
+    font-size: 16px;
+    padding: 15px 16px;
+  }
+  .extra-content {
+    padding: 0 16px 18px;
+    font-size: 14px;
+  }
+}
