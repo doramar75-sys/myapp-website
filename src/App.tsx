@@ -68,7 +68,7 @@ function App() {
       </section>
       <section className="wrap mission"><h2>世の中から、<span className="accent">めんどくさいをなくそう。</span></h2><p>日々の暮らしを、もっとシンプルに。</p></section>
     </main>
-    <footer className="wrap site-footer"><span>© MYAPP</span><a href={`${base}usage.html`}>使い方・ご利用前の注意事項</a></footer>
+    <footer className="wrap site-footer" style={{ flexWrap: 'wrap', gap: 12 }}><span>© MYAPP</span><div style={{ display: 'flex', flexWrap: 'wrap', gap: 14 }}><a href={`${base}usage.html`}>使い方・ご利用前の注意事項</a><a href={`${base}privacy.html`}>プライバシーポリシー</a><a href={`${base}terms.html`}>利用規約</a></div></footer>
   </div>
 }
 
